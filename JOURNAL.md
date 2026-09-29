@@ -41,7 +41,7 @@
   - Extensions VS Code
   - Extensions Chrome
 
-  ### Notions CSS vues aujourd'hui
+### Notions CSS vues aujourd'hui
 
 - **Polices** : import de police externe via `@import url(...)` (Google Fonts) et déclaration de police locale avec `@font-face`
 - **Texte** : `text-transform`, `letter-spacing`, `text-align`, tailles en `rem`, `text-shadow`, `font-family`
@@ -92,8 +92,8 @@ Prochain cours : SEO
 
 ## Jour 6
 
--26/09/2026
-Cours SEO
+- 26/09/2026
+  Cours SEO
 
 ### Règles SEO à retenir
 
@@ -129,8 +129,8 @@ Mise en pratique des principes SEO/perf sur une page (nav, header responsive, se
 
 ## Jour 7
 
--27/09/2026
-Cours SASS
+- 27/09/2026
+  Cours SASS
 
 Introduction à Sass, préprocesseur CSS pour un code plus structuré et maintenable.
 
@@ -149,47 +149,71 @@ Approche plus modulaire, pensée en composants réutilisables plutôt qu'en styl
 - Ajout du `README.md` (même format que celui du HTML/CSS, sans liste d'exercices : le détail est dans le journal) et du `JOURNAL.md` (historique complet conservé)
 - Suivi du cours en live, code réalisé en parallèle du formateur avec personnalisation, sans TP après coup
 
+### Notions JavaScript vues aujourd'hui
+
+- À compléter après le cours
+
 - Prochaine étape : suite du cours JavaScript
 
 ## Jour 9
 
--29/09/2026
-Cours JavaScript — Les bases
+- 29/09/2026
+  Cours JavaScript — Les bases
+
+Suivi du cours en live, code réalisé en parallèle du formateur avec personnalisation
 
 ### Notions JavaScript vues aujourd'hui
 
-Variables : différence entre var (ancienne syntaxe, à éviter), const (valeur fixe) et let (valeur modifiable)
-Convention de nommage : camelCase (première lettre minuscule, majuscule à chaque mot suivant)
-Chaînes de caractères : guillemets simples vs doubles, \ pour échapper un guillemet, concaténation avec +, template literals avec les backticks et ${variable} (plus lisible que la concaténation classique)
-Types de données : string, number, boolean, tableau ([]), objet ({} avec paires clé/valeur), variable déclarée sans valeur initiale
-Opérateurs arithmétiques : +, -, _, /, \*\* (puissance)
-Opérateurs d'affectation : total++, total += 5, total -= 4, total _= 2
-Structures de contrôle : if / else if / else, condition sur une variable seule (truthy/falsy)
-Égalité : === (égalité stricte, type ET valeur) vs == (égalité de valeur uniquement, sans tenir compte du type)
-Opérateurs logiques : || (ou, une condition suffit) et && (et, toutes les conditions requises)
-Fonctions : fonction classique (function nom() {}) à appeler explicitement, fonction fléchée (const nom = (params) => {})
-Portée des variables : une variable déclarée dans une fonction (let num dans add2()) n'existe que dans cette fonction
+- **Variables** : différence entre `var` (ancienne syntaxe, à éviter), `const` (valeur fixe) et `let` (valeur modifiable)
+- **Convention de nommage** : camelCase (première lettre minuscule, majuscule à chaque mot suivant)
+- **Chaînes de caractères** : guillemets simples vs doubles, `\` pour échapper un guillemet, concaténation avec `+`, template literals avec les backticks et `${variable}` (plus lisible que la concaténation classique)
+- **Types de données** : `string`, `number`, `boolean`, tableau (`[]`), objet (`{}` avec paires clé/valeur), variable déclarée sans valeur initiale
+- **Opérateurs arithmétiques** : `+`, `-`, `*`, `/`, `**` (puissance)
+- **Opérateurs d'affectation** : `total++`, `total += 5`, `total -= 4`, `total *= 2`
+- **Structures de contrôle** : `if` / `else if` / `else`, condition sur une variable seule (truthy/falsy)
+- **Égalité** : `===` (égalité stricte, type ET valeur) vs `==` (égalité de valeur uniquement, sans tenir compte du type)
+- **Opérateurs logiques** : `||` (ou, une condition suffit) et `&&` (et, toutes les conditions requises)
+- **Fonctions** : fonction classique (`function nom() {}`) à appeler explicitement, fonction fléchée (`const nom = (params) => {}`)
+- **Portée des variables** : une variable déclarée dans une fonction (`let num` dans `add2()`) n'existe que dans cette fonction
+
+### Difficultés / questions
+
+- Ligne de commentaire sur `===` oubliée (pas de `//`), à corriger pour éviter une erreur de syntaxe
+
+### Commit
+
+`git commit -m "cours js: notions de base (variables, types, operateurs, conditions, fonctions)"`
 
 ## Jour 10
 
 - 29/09/2026
   Cours JavaScript — Le DOM et les événements (partie 2)
 
+Suivi du cours en live, code réalisé en parallèle du formateur avec personnalisation
+
 ### Notions JavaScript vues aujourd'hui
 
-Sélecteurs DOM : document.querySelector(), document.querySelectorAll(), document.getElementById(), document.getElementsByClassName()
-Click events : addEventListener("click", callback), classList.toggle() / classList.add() pour manipuler les classes CSS depuis le JS
-Mouse events : mousemove, mousedown, mouseup, mouseenter, mouseout, mouseover — récupération de la position du curseur (e.pageX, e.pageY) pour déplacer un élément en JS
-Keypress event : keypress sur document, récupération de la touche pressée (e.key), lecture d'un fichier audio avec new Audio() et .play()
-Scroll event : window.addEventListener("scroll", ...), window.scrollY pour détecter la position de défilement (ex. nav qui apparaît après un certain scroll)
-Form events : input event sur les champs (texte, select), submit event sur le form avec e.preventDefault() pour empêcher le rechargement de page, construction de HTML dynamique avec un template literal
-Load event : window.addEventListener("load", ...)
-forEach sur une NodeList : querySelectorAll(...).forEach(...) pour attacher un même comportement à plusieurs éléments
-Bubbling vs Capture : troisième argument de addEventListener (true/false) pour choisir la phase de propagation de l'événement (capture en descendant vs bubbling en remontant)
-Stop propagation : e.stopPropagation() pour empêcher un événement de remonter aux parents
-BOM (Browser Object Model) : window.innerHeight, window.scrollY, window.open(), window.close(), alert(), confirm(), prompt()
-Timers : setTimeout(callback, délai) pour une exécution différée, setInterval(callback, délai) pour une exécution répétée, clearInterval() pour l'arrêter
-Location : location.href, location.host, location.pathname, location.search, location.replace()
-Navigator : navigator.userAgent, aperçu de la géolocalisation avec navigator.geolocation.getCurrentPosition()
-History : history.back(), history.go(-2)
-CSS depuis le JS : style.setProperty("--x", valeur) pour piloter une variable CSS personnalisée depuis un événement JS (ex. suivre la souris)
+- **Sélecteurs DOM** : `document.querySelector()`, `document.querySelectorAll()`, `document.getElementById()`, `document.getElementsByClassName()`
+- **Click events** : `addEventListener("click", callback)`, `classList.toggle()` / `classList.add()` pour manipuler les classes CSS depuis le JS
+- **Mouse events** : `mousemove`, `mousedown`, `mouseup`, `mouseenter`, `mouseout`, `mouseover` — récupération de la position du curseur (`e.pageX`, `e.pageY`) pour déplacer un élément en JS
+- **Keypress event** : `keypress` sur `document`, récupération de la touche pressée (`e.key`), lecture d'un fichier audio avec `new Audio()` et `.play()`
+- **Scroll event** : `window.addEventListener("scroll", ...)`, `window.scrollY` pour détecter la position de défilement (ex. nav qui apparaît après un certain scroll)
+- **Form events** : `input` event sur les champs (texte, `select`), `submit` event sur le `form` avec `e.preventDefault()` pour empêcher le rechargement de page, construction de HTML dynamique avec un template literal
+- **Load event** : `window.addEventListener("load", ...)`
+- **forEach sur une NodeList** : `querySelectorAll(...).forEach(...)` pour attacher un même comportement à plusieurs éléments
+- **Bubbling vs Capture** : troisième argument de `addEventListener` (`true`/`false`) pour choisir la phase de propagation de l'événement (capture en descendant vs bubbling en remontant)
+- **Stop propagation** : `e.stopPropagation()` pour empêcher un événement de remonter aux parents
+- **BOM (Browser Object Model)** : `window.innerHeight`, `window.scrollY`, `window.open()`, `window.close()`, `alert()`, `confirm()`, `prompt()`
+- **Timers** : `setTimeout(callback, délai)` pour une exécution différée, `setInterval(callback, délai)` pour une exécution répétée, `clearInterval()` pour l'arrêter
+- **Location** : `location.href`, `location.host`, `location.pathname`, `location.search`, `location.replace()`
+- **Navigator** : `navigator.userAgent`, aperçu de la géolocalisation avec `navigator.geolocation.getCurrentPosition()`
+- **History** : `history.back()`, `history.go(-2)`
+- **CSS depuis le JS** : `style.setProperty("--x", valeur)` pour piloter une variable CSS personnalisée depuis un événement JS (ex. suivre la souris)
+
+### Difficultés / questions
+
+- À l'usage, `clearInterval(interval)` référence une variable `interval` qui est commentée dans le code (le `setInterval` associé est désactivé) — à surveiller si le bloc est réactivé
+
+### Commit
+
+`git commit -m "cours js: dom, evenements (click, mouse, keypress, scroll, form), timers, bom"`
