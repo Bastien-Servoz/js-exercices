@@ -180,10 +180,6 @@ Suivi du cours en live, code réalisé en parallèle du formateur avec personnal
 
 - Ligne de commentaire sur `===` oubliée (pas de `//`), à corriger pour éviter une erreur de syntaxe
 
-### Commit
-
-`git commit -m "cours js: notions de base (variables, types, operateurs, conditions, fonctions)"`
-
 ## Jour 10
 
 - 29/09/2026
@@ -213,7 +209,3 @@ Suivi du cours en live, code réalisé en parallèle du formateur avec personnal
 ### Difficultés / questions
 
 - À l'usage, `clearInterval(interval)` référence une variable `interval` qui est commentée dans le code (le `setInterval` associé est désactivé) — à surveiller si le bloc est réactivé
-
-### Commit
-
-`git commit -m "cours js: dom, evenements (click, mouse, keypress, scroll, form), timers, bom"`
