@@ -209,3 +209,42 @@ Suivi du cours en live, code réalisé en parallèle du formateur avec personnal
 ### Difficultés / questions
 
 - À l'usage, `clearInterval(interval)` référence une variable `interval` qui est commentée dans le code (le `setInterval` associé est désactivé) — à surveiller si le bloc est réactivé
+
+## Jour 11 12 13
+
+— 30/09/2026 au 02/10/2026 (3 jours)
+Cours JavaScript — Partie 3 : "La Data"
+
+Suivi du cours en live, code réalisé en parallèle du formateur avec personnalisation. Réorganisation du dépôt en un dossier par partie de cours (`cours-partie1/` pour les bases, renommé depuis `les-bases/`, `cours-partie3/` pour cette partie), chacun pouvant contenir plusieurs sous-dossiers d'exercices.
+
+### Notions JavaScript vues
+
+- **Tableaux et objets imbriqués** : tableau contenant différents types (chaîne, nombre, booléen, tableau, objet), accès par index, tableau d'objets (`data`) pour représenter une liste d'utilisateurs
+- **Structures de contrôle** : rappel `if`/`else`, boucle `while`, boucle `do...while`, boucle `for...of` (parcours de valeurs), boucle `for` classique (déclaration / condition / incrémentation), `switch`/`case` sur `e.target.id` pour réagir à un clic selon l'élément cliqué
+- **Méthodes de chaînes de caractères** : `length`, accès à un caractère par index, `indexOf()`, `slice()`, `split()`, `toLowerCase()`/`toUpperCase()`, `replace()`, ainsi que `typeof`, `isNaN()`
+- **Méthodes de nombres** : `toFixed()`, `parseInt()`, `parseFloat()`, objet `Math` (`Math.PI`, `round`, `floor`, `ceil`, `pow`, `sqrt`, `random()`)
+- **Méthodes de tableaux** : `concat()` et spread (`...`) pour fusionner, `join()`, `slice()`, `indexOf()`, `forEach()`, `every()`/`some()`, `shift()`, `pop()`, `push()`, `splice()`, `reduce()`, et le trio **filter / sort / map** pour transformer une liste de données en HTML
+- **Méthodes d'objets** : chaînage `filter().sort().map()` sur un tableau d'objets pour générer dynamiquement des cartes HTML à partir de données
+- **Dates** : `new Date()`, `Date.parse()` (timestamp), `toISOString()`, `toLocaleDateString("fr-FR", {...})` pour un format lisible
+- **Destructuring** : extraction de propriété d'un objet (`const { destVar } = objet`), extraction de valeurs d'un tableau (`let [x, y, z] = array`), utilisation combinée avec `split()` pour reformater une date
+- **Datasets** : lecture d'attributs `data-*` en JS via `element.dataset.nomAttribut`
+- **Regex (expressions régulières)** : `search()`, `replace()` avec motif, `match()` avec flag `i` (insensible à la casse), classes de caractères (`[zug]`, `[12]`, `\d`, `[a-z]`), validation d'email avec un motif complet, séparation des milliers sur un nombre avec une regex avancée
+
+### Exemples pratiques réalisés
+
+#### `form-checker/`
+
+Validation de formulaire en temps réel (pseudo, email, mot de passe, confirmation) à l'aide de regex, affichage d'erreurs contextuelles par champ, barre de progression de robustesse du mot de passe.
+
+#### `password-maker/`
+
+Générateur de mot de passe aléatoire selon des critères cochés (minuscules, majuscules, chiffres, symboles), longueur réglable via un `range`, copie automatique dans le presse-papiers.
+
+#### `text-anim/`
+
+Animation de texte lettre par lettre en boucle sur plusieurs mots, génération et suppression dynamique d'éléments `<span>` avec des délais (`setTimeout`).
+
+### Difficultés / questions
+
+- Coquille dans `form-checker` : `default: nul;` au lieu de `null;` dans le `switch` (sans conséquence ici, mais à corriger)
+- Dans `password-maker`, les variables `lowercase`, `uppercase`, `numbers`, `symbols` et `generateButton` sont utilisées sans déclaration explicite (`document.getElementById`) — fonctionne si l'`id` HTML correspond au nom de variable, à vérifier/clarifier si le script est réutilisé ailleurs
