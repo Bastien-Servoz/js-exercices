@@ -248,3 +248,39 @@ Animation de texte lettre par lettre en boucle sur plusieurs mots, génération 
 
 - Coquille dans `form-checker` : `default: nul;` au lieu de `null;` dans le `switch` (sans conséquence ici, mais à corriger)
 - Dans `password-maker`, les variables `lowercase`, `uppercase`, `numbers`, `symbols` et `generateButton` sont utilisées sans déclaration explicite (`document.getElementById`) — fonctionne si l'`id` HTML correspond au nom de variable, à vérifier/clarifier si le script est réutilisé ailleurs
+
+## Jour 12
+
+— 03/10/2026
+Cours JavaScript — Partie 4 : les API
+
+Suivi du cours en live, code réalisé en parallèle du formateur avec personnalisation. Nouveau dossier `cours-partie4/`, avec les 3 projets pratiques en sous-dossiers.
+
+### Notions JavaScript vues aujourd'hui
+
+- **XMLHttpRequest** : ancienne méthode pour faire une requête HTTP (`new XMLHttpRequest()`, `req.onload`, `req.open()`, `req.send()`), callback déclenché une fois la réponse reçue
+- **Fetch** : syntaxe moderne pour requêter une ressource, `fetch(url).then(res => res.text())` pour du texte brut, `fetch(url).then(res => res.json())` pour du JSON, `.catch()` pour gérer les erreurs
+- **Headers et options de requête** : constructeur `new Headers()`, objet d'options (`method`, `headers`, `mode: "cors"`, `cache`, `credentials`) passé en second argument de `fetch()`
+- **Requête POST** : `method: "POST"`, en-tête `"Content-Type": "application/json"`, corps de requête avec `JSON.stringify({...})`
+- **json-server** : mise en place d'une petite API locale avec `npm i -g json-server` et `json-server --w db.json`, pour tester des requêtes POST sans backend réel
+- **Asynchrone** : rappel `setTimeout`, les Promesses (`fetch(...).then(...)`), et la syntaxe `async`/`await` (fonction classique et fonction fléchée) comme alternative plus lisible aux `.then()` enchaînés
+- **JSON** : format d'échange de données, `res.json()` qui retourne une promesse résolue avec le corps de la réponse parsé, `JSON.stringify()` pour convertir un objet en texte JSON et `JSON.parse()` pour l'inverse
+- **Web APIs (aperçu)** : `localStorage` (stockage uniquement en chaînes de caractères, nécessite `JSON.stringify`/`JSON.parse` pour des objets), cookies et notifications mentionnés comme pistes à explorer plus tard
+
+### Exemples pratiques réalisés
+
+#### `joke-app/`
+
+Récupération d'une blague aléatoire depuis l'API blablagues (`fetch` + `.then(res => res.json())`), affichage du titre et du texte (ou du texte caché si le champ principal est vide), nouvelle blague à chaque clic sur la page (`document.body.addEventListener("click", getJoke)`).
+
+#### `meal-app/`
+
+Recherche de recettes en temps réel via l'API TheMealDB, requête `fetch` dans une fonction `async`, limitation de l'affichage à 12 résultats (`meals.length = 12`), gestion du cas "aucun résultat" (`meals === null`), construction dynamique de la liste d'ingrédients d'une recette en bouclant sur les champs `strIngredientN` / `strMeasureN` de l'API.
+
+#### `user-app/`
+
+Génération de 24 cartes utilisateurs aléatoires via l'API randomuser.me, affichage de la photo, du nom, de la ville et de la date de naissance formatée (`toLocaleDateString("fr-FR", {...})`), calcul du nombre de jours depuis l'inscription à partir de deux timestamps (`Date.parse()` et différence convertie en jours).
+
+### Difficultés / questions
+
+- Dans `meal-app` et `user-app`, mélange de `await` et de `.then()` sur la même requête (`await fetch(...).then().then()`) — fonctionne, mais style hybride à uniformiser plus tard, en passant par exemple à `const data = await (await fetch(...)).json()`
