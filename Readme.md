@@ -33,11 +33,21 @@ js-exercices/
 ├── JOURNAL.md
 ├── cours-partie1/        # bases du JavaScript (variables, types, fonctions...)
 ├── cours-partie2/        # DOM et événements
-└── cours-partie3/        # la data (tableaux, objets, boucles, regex...)
+├── cours-partie3/        # la data (tableaux, objets, boucles, regex...)
+│   ├── cours/
+│   ├── form-checker/
+│   ├── password-maker/
+│   └── text-anim/
+├── cours-partie4/        # les API (fetch, XMLHttpRequest, async/await)
+│   ├── cours/
+│   ├── joke-app/
+│   ├── meal-app/
+│   ├── support/
+│   └── user-app/
+└── cours-partie5/        # les objets et la POO (classes, héritage)
     ├── cours/
-    ├── form-checker/
-    ├── password-maker/
-    └── text-anim/
+    ├── support/
+    └── yoga-routine/
 ```
 
 ## Conventions

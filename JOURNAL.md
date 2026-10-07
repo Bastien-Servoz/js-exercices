@@ -284,3 +284,52 @@ Génération de 24 cartes utilisateurs aléatoires via l'API randomuser.me, affi
 ### Difficultés / questions
 
 - Dans `meal-app` et `user-app`, mélange de `await` et de `.then()` sur la même requête (`await fetch(...).then().then()`) — fonctionne, mais style hybride à uniformiser plus tard, en passant par exemple à `const data = await (await fetch(...)).json()`
+
+## Jour 13
+
+- 07/10/2026
+  JavaScript, partie 5 (Les objets et la POO)
+
+### Cours : les objets
+
+#### Manipuler un objet littéral
+
+- Création d'un objet (paires clé/valeur), méthodes avec `this`
+- Ajouter, modifier et supprimer une propriété (`obj.age`, `obj["admin"]`, `delete`)
+- Vérifier l'existence d'une propriété avec `in`
+- Parcourir avec `for...in`
+- `Object.keys()`, `Object.values()`, `Object.entries()`
+- Fusionner des objets avec `Object.assign()`
+- Empêcher les modifications : `Object.freeze()` (aucune modification) et `Object.seal()` (modification possible, mais pas d'ajout ni de suppression)
+
+#### Construire des objets
+
+- Fonction constructeur avec `new`
+- Factory function (retourne un objet, syntaxe raccourcie `{ pseudo, ville }`)
+- Classes ES6 : `class` et `constructor`
+- Ajouter des méthodes via `prototype` et `Object.assign(Class.prototype, {...})`
+
+#### L'héritage
+
+- `class Dog extends Animal` : réutilisation des propriétés et méthodes de la classe parente
+- Exemple : `Animal` → `Dog` et `Cat`, chacun avec sa méthode propre
+
+### Projet : yoga-routine
+
+Application de routine de yoga : une série de 10 postures, chacune avec un minuteur personnalisable, réalisée en live avec le formateur.
+
+#### Fonctionnalités
+
+- Page de paramétrage : durée de chaque posture (1 à 10 min), réorganisation par flèche, suppression d'une posture, bouton de réinitialisation
+- Page routine : compte à rebours, image de la posture, progression (ex. 3/10), sonnerie entre chaque posture
+- Page de fin : recommencer ou réinitialiser
+
+#### Notions mises en pratique
+
+- Classe `Exercice` pour gérer le minuteur (`setTimeout` récursif)
+- Objets `utils` et `page` pour organiser le code (affichage, événements, stockage)
+- `localStorage` avec `JSON.stringify()` / `JSON.parse()` pour sauvegarder la routine
+- Méthodes de tableaux : `map`, `join`, `forEach`
+- Échange de deux éléments par destructuring : `[a, b] = [b, a]`
+- Template literals pour générer le HTML, `dataset` pour lire les attributs `data-*`
+- API `Audio` pour la sonnerie
