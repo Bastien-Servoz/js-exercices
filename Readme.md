@@ -44,10 +44,16 @@ js-exercices/
 │   ├── meal-app/
 │   ├── support/
 │   └── user-app/
-└── cours-partie5/        # les objets et la POO (classes, héritage)
+├── cours-partie5/        # les objets et la POO (classes, héritage)
+│   ├── cours/
+│   ├── support/
+│   └── yoga-routine/
+└── cours-partie6/        # canvas, drag & drop, erreurs, modules, tests, TypeScript
     ├── cours/
+    ├── drag-and-drop/
+    ├── draw-js/
     ├── support/
-    └── yoga-routine/
+    └── test-js/
 ```
 
 ## Conventions

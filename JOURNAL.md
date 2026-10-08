@@ -333,3 +333,53 @@ Application de routine de yoga : une série de 10 postures, chacune avec un minu
 - Échange de deux éléments par destructuring : `[a, b] = [b, a]`
 - Template literals pour générer le HTML, `dataset` pour lire les attributs `data-*`
 - API `Audio` pour la sonnerie
+
+## Jour 14
+
+- 08/10/2026
+  JavaScript, partie 6 (Canvas, erreurs, modules, tests, TypeScript)
+
+### Cours : notions avancées
+
+#### Canvas
+
+- Récupérer le contexte 2D avec `getContext("2d")`
+- Dessiner des rectangles : `fillRect`, `strokeRect`, `clearRect`
+- Couleurs avec `fillStyle` (rgb / rgba, transparence)
+- Tracer des formes avec `beginPath`, `moveTo`, `lineTo`, `fill`
+- Lancer le dessin au chargement de la page avec `window.addEventListener("load", ...)`
+
+#### Gestion des erreurs : try / catch
+
+- `try / catch` pour tester un bloc de code sans bloquer le script
+- Exemple d'application : vérifier qu'un texte est du JSON valide avec `JSON.parse`
+- `finally` : bloc exécuté dans tous les cas
+- `throw` pour déclencher sa propre erreur (exemple : fonction `isNumber`)
+
+#### Strict mode
+
+- `"use strict"` en début de fichier
+- Interdit par exemple l'utilisation d'une variable non déclarée
+
+#### Modules, tests et écosystème
+
+- Modules : `import` / `export`
+- Tests unitaires : fichiers `add.test.js` et `fusionArray.test.js`, avec un dossier `coverage` (couverture de tests)
+- ECMAScript : évolution du langage et des versions
+- TypeScript : fichier `index.ts` compilé vers un dossier `dist`
+- Bibliothèques JS et comparatif des frameworks JS
+
+### Projets
+
+#### drag-and-drop
+
+- Glisser-déposer d'éléments dans la page, réalisé en live avec le formateur
+
+#### draw-js
+
+- Application de dessin avec canvas, réalisée en live avec le formateur
+
+#### test-js
+
+- Mini-projet de tests : fonctions `add` et `fusionArray`, avec leurs fichiers de test
+- Projet Node avec `package.json`, et une version TypeScript
